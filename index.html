@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subhasri Viswanathan — Neuroscience PhD Candidate</title>
+  <meta name="description" content="Academic website of Subhasri Viswanathan, PhD candidate in Neuroscience at Université de Montréal, studying adolescent brain network development and substance use." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:       #0F6E56;
+      --teal-light: #E1F5EE;
+      --teal-mid:   #1D9E75;
+      --text-primary:   #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-muted:     #888;
+      --border:         rgba(0,0,0,0.10);
+      --border-strong:  rgba(0,0,0,0.18);
+      --bg:             #ffffff;
+      --bg-surface:     #f7f7f5;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --teal:       #1D9E75;
+        --teal-light: #0a2e22;
+        --teal-mid:   #2ec98f;
+        --text-primary:   #f0f0f0;
+        --text-secondary: #b0b0b0;
+        --text-muted:     #666;
+        --border:         rgba(255,255,255,0.10);
+        --border-strong:  rgba(255,255,255,0.18);
+        --bg:             #141414;
+        --bg-surface:     #1e1e1e;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--bg);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 0.5px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 56px;
+    }
+
+    .nav-name {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text-primary); }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text-primary);
+      transition: 0.2s;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 3rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    section:last-child { border-bottom: none; }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 4rem 0 3rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal-mid);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 540px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 4px 11px;
+      border-radius: 20px;
+      background: var(--teal-light);
+      color: var(--teal);
+      font-weight: 500;
+    }
+
+    .initials-circle {
+      flex-shrink: 0;
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: var(--teal-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--teal);
+    }
+
+    /* ── SECTION LABEL ── */
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── ABOUT ── */
+    .about-text {
+      font-size: 14px;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      max-width: 640px;
+    }
+
+    .about-text p + p { margin-top: 1rem; }
+
+    /* ── CV / EDUCATION ── */
+    .cv-row {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .cv-row:last-child { border-bottom: none; }
+
+    .cv-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      padding-top: 2px;
+    }
+
+    .cv-title { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
+    .cv-sub   { font-size: 13px; color: var(--text-secondary); }
+    .cv-grade { font-size: 12px; color: var(--teal-mid); margin-top: 3px; }
+
+    /* ── PUBLICATIONS ── */
+    .sub-section { margin-bottom: 2.25rem; }
+    .sub-section:last-child { margin-bottom: 0; }
+
+    .sub-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+      padding-bottom: 6px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .pub-card {
+      padding: 0.9rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .pub-card:last-child { border-bottom: none; }
+
+    .pub-title {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 4px;
+    }
+
+    .pub-authors {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 5px;
+    }
+
+    .pub-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pub-journal { font-size: 12px; color: var(--text-muted); }
+
+    .status-pill {
+      font-size: 11px;
+      padding: 2px 9px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    .status-published  { background: #E1F5EE; color: #0F6E56; }
+    .status-submitted  { background: #faeeda; color: #854F0B; }
+
+    .doi-link {
+      font-size: 11px;
+      color: var(--teal-mid);
+      text-decoration: none;
+    }
+
+    .doi-link:hover { text-decoration: underline; }
+
+    /* ── PRESENTATIONS ── */
+    .pres-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 0.65rem 0;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .pres-row:last-child { border-bottom: none; }
+
+    .pres-text {
+      font-size: 13px;
+      line-height: 1.55;
+      flex: 1;
+      color: var(--text-secondary);
+    }
+
+    .pres-text em { color: var(--text-muted); font-style: normal; }
+
+    .scope-badge {
+      font-size: 11px;
+      padding: 2px 9px;
+      border-radius: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+
+    .scope-intl { background: #E6F1FB; color: #185FA5; }
+    .scope-natl { background: #EEEDFE; color: #534AB7; }
+    .scope-prov { background: #faeeda; color: #854F0B; }
+
+    /* ── RESEARCH ── */
+    .research-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .research-card:last-child { margin-bottom: 0; }
+
+    .research-title {
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .research-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+    }
+
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .rtag {
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 20px;
+      background: var(--bg);
+      border: 0.5px solid var(--border-strong);
+      color: var(--text-secondary);
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 12px;
+    }
+
+    .contact-card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contact-icon {
+      font-size: 20px;
+      color: var(--teal-mid);
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .contact-val {
+      font-size: 13px;
+      font-weight: 500;
+      word-break: break-all;
+    }
+
+    .contact-link {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--teal-mid);
+      text-decoration: none;
+    }
+
+    .contact-link:hover { text-decoration: underline; }
+
+    /* ── QR SECTION ── */
+    .qr-section {
+      text-align: center;
+      padding: 2.5rem 0 1rem;
+    }
+
+    .qr-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 12px;
+      color: var(--text-muted);
+      border-top: 0.5px solid var(--border);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 0 1.25rem; }
+      .container { padding: 0 1.25rem; }
+
+      .nav-links { display: none; flex-direction: column; gap: 0; }
+      .nav-links.open {
+        display: flex;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        border-bottom: 0.5px solid var(--border);
+        padding: 1rem 1.25rem;
+      }
+      .nav-links.open a { padding: 0.5rem 0; font-size: 15px; }
+      .nav-toggle { display: flex; }
+
+      .hero-inner { flex-direction: column-reverse; align-items: flex-start; }
+      .initials-circle { width: 72px; height: 72px; font-size: 18px; }
+      .hero h1 { font-size: 26px; }
+
+      .cv-row { grid-template-columns: 1fr; gap: 0.25rem; }
+      .cv-date { margin-bottom: 2px; }
+    }
+
+    @media print {
+      nav, .qr-section { display: none; }
+      section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <span class="nav-name">Subhasri Viswanathan</span>
+  <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="container">
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag">PhD Candidate · Neuroscience</div>
+        <h1>Subhasri Viswanathan</h1>
+        <p class="hero-sub">I study adolescent brain network development and the dissociable effects of cannabis and alcohol using longitudinal fMRI — combining clinical psychology and computational neuroimaging to understand how substance use shapes the developing brain.</p>
+        <div class="hero-badges">
+          <span class="badge">Université de Montréal</span>
+          <span class="badge">CHU Sainte-Justine</span>
+          <span class="badge">Conrod Venture Lab</span>
+          <span class="badge">fMRI · Graph Theory</span>
+        </div>
+      </div>
+      <div class="initials-circle" aria-hidden="true">SV</div>
+    </div>
+  </div>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="section-label">About</div>
+    <div class="about-text">
+      <p>I am a PhD candidate in Neuroscience at the Université de Montréal (CHU Sainte-Justine Azrieli Research Centre), supervised by Dr. Patricia Conrod. My research focuses on characterising normative trajectories of adolescent brain connectivity development and how cannabis and alcohol perturb these trajectories — using sign-aware graph-theoretical metrics and within/between-person decomposition to formally dissociate predisposition from consequence.</p>
+      <p>My background bridges clinical psychology (B.Sc. Psychology, Women's Christian College; M.Sc. Clinical Psychology, CHRIST University, Bangalore) and computational neuroimaging. Before my doctorate, I worked as a Project Associate at the Centre for Addiction Medicine, NIMHANS Bangalore, leading a large-scale population study on tobacco use among 600,000+ COVID-19 patients.</p>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section id="cv">
+    <div class="section-label">Education</div>
+
+    <div class="cv-row">
+      <div class="cv-date">Aug 2023 – present</div>
+      <div>
+        <div class="cv-title">PhD, Neuroscience</div>
+        <div class="cv-sub">Université de Montréal · CHU Sainte-Justine</div>
+        <div class="cv-grade">GPA 4.15 · Supervisor: Dr. Patricia Conrod</div>
+      </div>
+    </div>
+
+    <div class="cv-row">
+      <div class="cv-date">Aug 2022 – Aug 2023</div>
+      <div>
+        <div class="cv-title">Maîtrise, Neurosciences (accelerated passage)</div>
+        <div class="cv-sub">Université de Montréal</div>
+        <div class="cv-grade">GPA 3.72</div>
+      </div>
+    </div>
+
+    <div class="cv-row">
+      <div class="cv-date">May 2019 – May 2021</div>
+      <div>
+        <div class="cv-title">M.Sc. Clinical Psychology</div>
+        <div class="cv-sub">CHRIST (Deemed to be University), Bangalore</div>
+        <div class="cv-grade">GPA 3.73</div>
+      </div>
+    </div>
+
+    <div class="cv-row">
+      <div class="cv-date">May 2016 – Jun 2019</div>
+      <div>
+        <div class="cv-title">B.Sc. Psychology</div>
+        <div class="cv-sub">Women's Christian College, Chennai · University of Madras</div>
+        <div class="cv-grade">GPA 3.69</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PUBLICATIONS ── -->
+  <section id="publications">
+    <div class="section-label">Publications &amp; Presentations</div>
+
+    <div class="sub-section">
+      <div class="sub-label">First-author peer-reviewed articles</div>
+      <div class="pub-card">
+        <div class="pub-title">Longitudinal study of adolescent brain connectivity development using sign-aware graph theory metrics</div>
+        <div class="pub-authors">Viswanathan S, Spinney S, Watts JJ, Conrod P. (2026)</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Human Brain Mapping</span>
+          <span class="status-pill status-published">Published</span>
+          <a class="doi-link" href="https://onlinelibrary.wiley.com/doi/full/10.1002/hbm.70549" target="_blank" rel="noopener">10.1002/hbm.70549 ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-label">Co-authored peer-reviewed articles</div>
+      <div class="pub-card">
+        <div class="pub-title">The role of sleep in the neurodevelopment of inhibition: a longitudinal cohort study</div>
+        <div class="pub-authors">Ouellet J, Viswanathan S, Diadaskalou M, Assaf R, Wallace J, Potvin S, Conrod P. (2025)</div>
+        <div class="pub-meta">
+          <span class="pub-journal">Journal of the American Academy of Child and Adolescent Psychiatry (JAACAP)</span>
+          <span class="status-pill status-submitted">Submitted</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-label">Poster presentations</div>
+      <div class="pres-row">
+        <p class="pres-text">Viswanathan S, Watts J, Spinney S, Conrod P. (2025). Age-related brain network changes during adolescence: A longitudinal graph theory analysis. <em>OHBM, Brisbane, Australia.</em></p>
+        <span class="scope-badge scope-intl">International</span>
+      </div>
+      <div class="pres-row">
+        <p class="pres-text">Viswanathan S, Watts J, Conrod P. (2026). Dissociating within and between-person effects of cannabis and alcohol on adolescent brain network development. <em>CAN Integrate and Fire, Montreal, Canada.</em></p>
+        <span class="scope-badge scope-natl">National</span>
+      </div>
+      <div class="pres-row">
+        <p class="pres-text">Viswanathan S, Watts J, Spinney S, Conrod P. (2024). Age-related changes in resting-state functional network connectivity: A longitudinal analysis with graph measures. <em>FLUX International Conference, Baltimore, USA.</em></p>
+        <span class="scope-badge scope-intl">International</span>
+      </div>
+      <div class="pres-row">
+        <p class="pres-text">Viswanathan S, Watts J, Spinney S, Conrod P. (2023). Functional network connectivity during anticipation of rewards and influence of substance use in adolescents. <em>FLUX International Conference, Santa Rosa, USA.</em></p>
+        <span class="scope-badge scope-intl">International</span>
+      </div>
+    </div>
+
+    <div class="sub-section">
+      <div class="sub-label">Oral presentations</div>
+      <div class="pres-row">
+        <p class="pres-text">Viswanathan S, Conrod P. (2022). Exploring functional network connectivity of reward anticipation in adolescents longitudinally: A proposed study. <em>9e Congrès des étudiants, Dép. de Neurosciences, UdeM, Montréal.</em></p>
+        <span class="scope-badge scope-prov">Provincial</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESEARCH ── -->
+  <section id="research">
+    <div class="section-label">Research Projects</div>
+
+    <div class="research-card">
+      <div class="research-title">Doctoral project — Adolescent brain network development &amp; substance use (NeuroVenture cohort)</div>
+      <div class="research-desc">Using longitudinal fMRI (~155 adolescents, 3 timepoints, ages 12–18), I characterise normative trajectories of functional connectivity with sign-aware graph-theoretical metrics and formally dissociate intra- from inter-individual effects of cannabis and alcohol using hierarchical mixed models (Mundlak decomposition). Task-based fMRI (Stop-Signal, MID) extends findings to cognitive control and reward processing.</div>
+      <div class="research-tags">
+        <span class="rtag">Longitudinal fMRI</span>
+        <span class="rtag">Graph theory</span>
+        <span class="rtag">Cannabis &amp; alcohol</span>
+        <span class="rtag">Adolescent development</span>
+        <span class="rtag">Within/between decomposition</span>
+      </div>
+    </div>
+
+    <div class="research-card">
+      <div class="research-title">ProVenture cohort — multimodal neuroimaging pipeline</div>
+      <div class="research-desc">Contributing to preprocessing and dataset preparation for a second longitudinal multimodal imaging dataset, ensuring pipeline continuity and reproducibility across the Conrod Venture Lab team.</div>
+      <div class="research-tags">
+        <span class="rtag">fMRIPrep</span>
+        <span class="rtag">Pipeline development</span>
+        <span class="rtag">Reproducibility</span>
+      </div>
+    </div>
+
+    <div class="research-card">
+      <div class="research-title">Prior: Tobacco use among COVID-19 patients (NIMHANS, Bangalore)</div>
+      <div class="research-desc">Led an independent large-scale population study (600,000+ participants) on tobacco use among COVID-19 patients. Trained 30 psychologists and conducted 902 in-depth interviews across multiple sites, coordinating all data-collection logistics.</div>
+      <div class="research-tags">
+        <span class="rtag">Epidemiology</span>
+        <span class="rtag">Addiction medicine</span>
+        <span class="rtag">Large-scale coordination</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="section-label">Contact</div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <span class="contact-icon" aria-hidden="true">✉</span>
+        <div>
+          <div class="contact-label">Email</div>
+          <a class="contact-link" href="mailto:subhasri.viswanathan@umontreal.ca">subhasri.viswanathan<br>@umontreal.ca</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-icon" aria-hidden="true">☁</span>
+        <div>
+          <div class="contact-label">Bluesky</div>
+          <a class="contact-link" href="https://bsky.app/profile/subhasriviswa.bsky.social" target="_blank" rel="noopener">@subhasriviswa</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-icon" aria-hidden="true">⟲</span>
+        <div>
+          <div class="contact-label">ORCID</div>
+          <a class="contact-link" href="https://orcid.org/0009-0009-2062-4105" target="_blank" rel="noopener">0009-0009-2062-4105</a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <span class="contact-icon" aria-hidden="true">⌂</span>
+        <div>
+          <div class="contact-label">Institution</div>
+          <div class="contact-val">CHU Sainte-Justine<br>Azrieli Research Centre</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QR CODE placeholder -->
+    <div class="qr-section">
+      <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QR code placeholder — replace with your generated QR code">
+        <rect width="120" height="120" fill="none" stroke="var(--border-strong)" stroke-width="1" rx="6"/>
+        <rect x="10" y="10" width="36" height="36" fill="none" stroke="var(--text-muted)" stroke-width="1.5" rx="2"/>
+        <rect x="16" y="16" width="24" height="24" fill="var(--text-muted)" rx="1" opacity="0.3"/>
+        <rect x="74" y="10" width="36" height="36" fill="none" stroke="var(--text-muted)" stroke-width="1.5" rx="2"/>
+        <rect x="80" y="16" width="24" height="24" fill="var(--text-muted)" rx="1" opacity="0.3"/>
+        <rect x="10" y="74" width="36" height="36" fill="none" stroke="var(--text-muted)" stroke-width="1.5" rx="2"/>
+        <rect x="16" y="80" width="24" height="24" fill="var(--text-muted)" rx="1" opacity="0.3"/>
+        <text x="60" y="63" text-anchor="middle" font-size="8" fill="var(--text-muted)" font-family="system-ui">QR CODE</text>
+        <text x="60" y="73" text-anchor="middle" font-size="7" fill="var(--text-muted)" font-family="system-ui">replace me</text>
+      </svg>
+      <p class="qr-label">Scan to visit this page — replace with your generated QR code</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <p>Subhasri Viswanathan · Université de Montréal · CHU Sainte-Justine Azrieli Research Centre</p>
+</footer>
+
+</body>
+</html>
